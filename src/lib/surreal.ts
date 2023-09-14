@@ -5,16 +5,16 @@ let db: Surreal = new Surreal()
 let connected = false
 
 export async function useSurreal(): Promise<Surreal> {
-  await surrealConnect(db)
+  if (!connected) {
+    await surrealConnect(db)
+    connected = true
+  }
 
   return db
 }
 
 export async function surrealConnect(db: Surreal): Promise<Surreal> {
-  if (!connected)
-    await db.connect('ws://localhost:8000/rpc')
-
-  connected = true
+  await db.connect('ws://localhost:8000/rpc')
 
   return db
 }
