@@ -2,6 +2,7 @@
   import { goto } from "$app/navigation";
   import { surrealConnect } from "$lib/surreal";
   import { Surreal } from "surrealdb.js";
+  import { t } from 'svelte-i18n'
 
   let username = ''
   let password = ''
@@ -33,5 +34,5 @@
 <form on:submit|preventDefault={login}>
   <input type="text" bind:value={username} placeholder="Username">
   <input type="password" bind:value={password} placeholder="Password">
-  <button type="submit">Login</button>
+  <button type="submit">{$t('login')}</button>
 </form>

@@ -12,11 +12,14 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
+		"@unocss/reset": "^0.55.7",
 		"surrealdb.js": "^0.9.0",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
+		"svelte-i18n": "^3.7.4",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
+		"unocss": "^0.55.7",
 		"vite": "^4.4.2"
 	},
 	"type": "module",
