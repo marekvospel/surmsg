@@ -2,5 +2,6 @@
   "login": "ログイン",
   "logout": "ログアウト",
   "send": "送る",
-  "message": "メッセージ"
+  "message": "メッセージ",
+  "register": "レギスター"
 }

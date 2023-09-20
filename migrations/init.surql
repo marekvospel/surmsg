@@ -2,18 +2,14 @@ DEFINE TABLE user SCHEMAFULL
   PERMISSIONS
     FOR select,update,delete WHERE id = $auth.id;
 
-DEFINE FIELD username ON TABLE user TYPE string;
 DEFINE FIELD password ON TABLE user TYPE string;
-
-DEFINE INDEX username ON user FIELDS username UNIQUE;
 
 DEFINE SCOPE user SESSION 1d
   SIGNIN (
-    SELECT * FROM user WHERE username = $username AND crypto::argon2::compare(password, $password)
+    SELECT * FROM type::thing("user", $username) WHERE crypto::argon2::compare(password, $password)
   )
   SIGNUP (
-    CREATE user CONTENT {
-      username: $username,
+    CREATE type::thing("user", $username) CONTENT {
       password: crypto::argon2::generate($password)
     }
   );

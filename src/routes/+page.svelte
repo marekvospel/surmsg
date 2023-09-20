@@ -26,7 +26,7 @@
 </button>
 
 {#each $messages as message}
-  <li>&lt;{message.author}&gt; {message.content}</li>
+  <li>&lt;{message.author.replace(/^user:/, '')}&gt; {message.content}</li>
 {/each}
 <br>
 <form on:submit|preventDefault={sendMessage}>

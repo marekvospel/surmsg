@@ -12,7 +12,7 @@ init({
 })
 
 export const load: LayoutLoad = async () => {
-  if (browser) {
+  if (browser && localStorage.getItem('locale')) {
     locale.set(localStorage.getItem('locale'))
   }
   await waitLocale()
