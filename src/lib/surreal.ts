@@ -14,7 +14,7 @@ export async function useSurreal(): Promise<Surreal> {
 }
 
 export async function surrealConnect(db: Surreal): Promise<Surreal> {
-  await db.connect('ws://localhost:8000/rpc')
+  await db.connect(/*new URL('/rpc', window.location.href).href*/ 'https://surmsg.vospel.cz/rpc')
 
   return db
 }

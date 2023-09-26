@@ -14,7 +14,7 @@
   </div>
 {/if}
 
-<style scoped lang="scss">
+<style scoped>
   .type-text {
     @apply px-2 py-2 text-lg text-black rounded-md w-full h-full;
   }

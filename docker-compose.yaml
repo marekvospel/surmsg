@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  surreal:
+    env_file:
+      - .env
+    image: surrealdb/surrealdb:latest
+    command:
+      - 'start'
+      - '--user'
+      - $SURREAL_USER
+      - '--password'
+      - $SURREAL_PASSWORD
+      - '--auth'
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.surreal.rule=Host(`surmsg.vospel.cz`) && (PathPrefix(`/rpc`) || PathPrefix(`/sql`))"
+      - "traefik.http.routers.surreal.entrypoints=websecure"
+      - "traefik.http.routers.surreal.tls.certresolver=letsencrypt"
+      - "traefik.port=8000"
+  app:
+    image: marekvospel/surmsg:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`surmsg.vospel.cz`)"
+      - "traefik.http.routers.app.tls.certresolver=letsencrypt"

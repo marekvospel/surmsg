@@ -43,30 +43,30 @@
   </button>
 {/if}
 
-<style scoped lang="scss">
+<style scoped>
   .button {
-    @apply flex items-center lg:text-lg justify-center font-bold rounded-lg duration-200 text-center select-none;
+    @apply flex items-center /*lg:text-lg*/ justify-center font-bold rounded-lg duration-200 text-center select-none;
   }
   .active {
-    @apply hover:scale-105 cursor-pointer;
+    @apply /*hover:scale-105*/ cursor-pointer;
   }
   .outer {
-    @apply border-2 border-solid border-system-primary active;
+    @apply border-2 border-solid border-system-primary;
   }
   .dark-outer {
-    @apply border-2 border-solid border-system-dark-900 text-black active;
+    @apply border-2 border-solid border-system-dark-900 text-black;
   }
   .dark {
-    @apply bg-system-dark-900 text-white active;
+    @apply bg-system-dark-900 text-white;
   }
   .positive {
-    @apply bg-green-500 text-white active;
+    @apply bg-green-500 text-white;
   }
   .negative {
-    @apply bg-system-red text-white active;
+    @apply bg-system-red text-white;
   }
   .small {
-    @apply px-2 py-1 lg:px-5;
+    @apply px-2 py-1 /*lg:px-5*/;
   }
   .disabled {
     @apply bg-gray-500 cursor-default;
