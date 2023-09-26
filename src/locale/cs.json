@@ -3,5 +3,9 @@
   "logout": "Odhlásit se",
   "send": "Odeslat",
   "message": "Zpráva",
-  "register": "Registrovat se"
+  "register": "Registrovat se",
+  "username": "Uživatelské jméno",
+  "password": "Heslo",
+  "noAccount": "Nemáte účet?",
+  "areadyHaveAccount": "Už mám účet"
 }

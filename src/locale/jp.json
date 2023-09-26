@@ -3,5 +3,9 @@
   "logout": "ログアウト",
   "send": "送る",
   "message": "メッセージ",
-  "register": "レギスター"
+  "register": "レギスター",
+  "username": "ロギン",
+  "password": "パスをー土",
+  "noAccount": "ロギンはしました？",
+  "areadyHaveAccount": "ロギンはします"
 }

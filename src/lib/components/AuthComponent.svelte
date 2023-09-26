@@ -48,8 +48,8 @@
     on:submit|preventDefault={login}
     class="flex flex-col items-start gap-2"
   >
-    <AuthInput bind:value={username} placeholder="Username" />
-    <AuthInput type="password" bind:value={password} placeholder="Password" />
+    <AuthInput bind:value={username} placeholder={$t('username')} />
+    <AuthInput type="password" bind:value={password} placeholder={$t('password')} />
     <AuthButton submit>
       {type === "signin" ? $t("login") : $t("register")}
     </AuthButton>
@@ -58,9 +58,9 @@
     > -->
     <br />
     {#if type === "signin"}
-      <a href="/register">Don't have an account?</a>
+      <a href="/register">{ $t('noAccount' )}</a>
     {:else}
-      <a href="/login">Already have an account</a>
+      <a href="/login">{ $t('areadyHaveAccount') }</a>
     {/if}
   </form>
 </div>
