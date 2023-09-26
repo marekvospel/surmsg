@@ -1,6 +1,8 @@
 <script lang="ts">
-  import '@unocss/reset/tailwind.css'
-  import 'virtual:uno.css'
+  import "@unocss/reset/tailwind.css";
+  import "virtual:uno.css";
 </script>
 
-<slot />
+<div class="bg-dark text-white">
+  <slot />
+</div>

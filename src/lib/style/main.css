@@ -1,0 +1,20 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a
+button,div,span{
+    color:white;
+}
+input{
+    color: black;
+}
+input::placeholder{
+    color:darkgrey
+}
+html{
+    @apply bg-system-dark-900
+}
