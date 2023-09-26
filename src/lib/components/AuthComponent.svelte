@@ -5,6 +5,7 @@
   import { t } from "svelte-i18n";
   import AuthInput from "./AuthInput.svelte";
   import AuthButton from "./AuthButton.svelte";
+  import { manageUser } from "$lib/userstore";
 
   export let type: "signin" | "signup" = "signin";
 
@@ -28,6 +29,7 @@
       goto("/", {
         replaceState: true,
       });
+      manageUser.set(username);
     } catch (e) {
       console.error("error:", e);
     }
