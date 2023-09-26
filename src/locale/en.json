@@ -3,5 +3,9 @@
   "logout": "Logout",
   "send": "Send",
   "message": "Message",
-  "register": "Register"
+  "register": "Register",
+  "password": "Password",
+  "username": "Username",
+  "noAccount": "Don't have an account?",
+  "areadyHaveAccount": "Already have an account"
 }

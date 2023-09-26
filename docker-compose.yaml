@@ -22,9 +22,15 @@ services:
       - "traefik.http.routers.surreal.entrypoints=websecure"
       - "traefik.http.routers.surreal.tls.certresolver=letsencrypt"
       - "traefik.port=8000"
+    volume:
+      - data:/data
   app:
-    image: marekvospel/surmsg:latest
+    image: ghcr.io/marekvospel/surmsg:latest
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.app.rule=Host(`surmsg.vospel.cz`)"
+      - "traefik.http.routers.app.entrypoints=websecure"
       - "traefik.http.routers.app.tls.certresolver=letsencrypt"
+
+volumes:
+  data:

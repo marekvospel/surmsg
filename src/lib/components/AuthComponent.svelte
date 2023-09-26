@@ -34,13 +34,13 @@
 </script>
 
 <form on:submit|preventDefault={login}>
-  <input type="text" bind:value={username} placeholder="Username">
-  <input type="password" bind:value={password} placeholder="Password">
+  <input type="text" bind:value={username} placeholder={$t('username')}>
+  <input type="password" bind:value={password} placeholder={$t('password')}>
   <button type="submit">{ type === 'signin' ? $t('login') : $t('register') }</button>
   <br>
   {#if type === 'signin'}
-    <a href="/register">Don't have an account?</a>
+    <a href="/register">{ $t('noAccount') }</a>
   {:else}
-    <a href="/login">Already have an account</a>
+    <a href="/login">{ $t('areadyHaveAccount') }</a>
   {/if}
 </form>
